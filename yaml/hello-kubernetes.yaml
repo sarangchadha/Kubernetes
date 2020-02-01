@@ -1,31 +1,31 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: hello-kubernetesSarang
+  name: hello-kubernetessarang
 spec:
   type: LoadBalancer
   ports:
   - port: 80
     targetPort: 8080
   selector:
-    app: hello-kubernetesSarang
+    app: hello-kubernetessarang
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-kubernetesSarang
+  name: hello-kubernetessarang
 spec:
   replicas: 5
   selector:
     matchLabels:
-      app: hello-kubernetesSarang
+      app: hello-kubernetessarang
   template:
     metadata:
       labels:
-        app: hello-kubernetesSarang
+        app: hello-kubernetessarang
     spec:
       containers:
-      - name: hello-kubernetesSarang
+      - name: hello-kubernetessarang
         image: paulbouwer/hello-kubernetes:1.7
         ports:
         - containerPort: 8080
